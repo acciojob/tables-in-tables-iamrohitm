@@ -4,13 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nested Tables</title>
+  
 </head>
 <body>
   <table class="main" role="presentation">
     <tbody>
-      <!-- First row: left and right cells -->
+      <!-- First row -->
       <tr>
-        <!-- TOP LEFT cell: Nested Table 2 -->
+        <!-- TOP LEFT: Nested Table 2 -->
         <td>
           <table class="nested" role="presentation">
             <thead>
@@ -39,7 +40,7 @@
           </table>
         </td>
 
-        <!-- TOP RIGHT cell: Nested Table 1 (with list) -->
+        <!-- TOP RIGHT: Nested Table 1 with two-column list -->
         <td>
           <table class="nested" role="presentation">
             <thead>
@@ -47,12 +48,24 @@
             </thead>
             <tbody>
               <tr>
-                <td class="list-cell">
-                  <ul>
-                    <li>List item 1</li>
-                    <li>List item 2</li>
-                    <li>List item 3</li>
-                  </ul>
+                <td>
+                  <!-- Two-column structure: left shows bullets, right shows list text lines -->
+                  <table class="list-table" role="presentation">
+                    <tbody>
+                      <tr>
+                        <td style="width:18%; vertical-align: top;">
+                          <ul class="list-bullets" aria-hidden="true">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                          </ul>
+                        </td>
+                        <td style="vertical-align: top;">
+                          <div class="list-text">List item 1<br>List item 2<br>List item 3</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </td>
               </tr>
             </tbody>
@@ -60,9 +73,9 @@
         </td>
       </tr>
 
-      <!-- Second row: left and right cells -->
+      <!-- Second row -->
       <tr>
-        <!-- BOTTOM LEFT cell: Nested Table 3 -->
+        <!-- BOTTOM LEFT: Nested Table 3 -->
         <td>
           <table class="nested" role="presentation">
             <thead>
@@ -71,7 +84,6 @@
             <tbody>
               <tr>
                 <td style="text-align:left; padding:10px;">
-                  <!-- A small inline nested row with link and demo text -->
                   <a class="link-box" href="#">Nested Table</a>
                   <span class="small-cell">Demo Continued</span>
                 </td>
@@ -80,7 +92,7 @@
           </table>
         </td>
 
-        <!-- BOTTOM RIGHT cell: Nested Table 4 with black HTML bar -->
+        <!-- BOTTOM RIGHT: Nested Table 4 with HTML black bar -->
         <td>
           <table class="nested" role="presentation">
             <thead>
