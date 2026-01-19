@@ -2,102 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nested Tables</title>
-  
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    table.main {
+      width: 100%;
+      height: 100%;
+      border: 4px solid #000;
+    }
+
+    table.main td {
+      border: 2px solid #000;
+      vertical-align: top;
+      padding: 10px;
+    }
+
+    .nested {
+      width: 100%;
+      border: 2px solid #000;
+    }
+
+    .nested th, .nested td {
+      border: 2px solid #000;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .nested th {
+      font-weight: bold;
+      background: #f3f3f3;
+    }
+
+    ul {
+      text-align: left;
+      padding-left: 30px;
+      margin: 10px 0;
+    }
+
+    .link-box {
+      display: inline-block;
+      border: 2px solid #000;
+      padding: 6px 12px;
+      color: purple;
+      text-decoration: underline;
+    }
+
+    .demo-box {
+      display: inline-block;
+      border: 2px solid #000;
+      padding: 6px 16px;
+      margin-left: 6px;
+    }
+
+    .black-cell {
+      background: #000;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
-  <table class="main" role="presentation">
-    <tbody>
-      <!-- First row: left and right cells -->
-      <tr>
-        <!-- TOP LEFT cell: Nested Table 2 -->
-        <td>
-          <table class="nested" role="presentation">
-            <thead>
-              <tr><th colspan="2">Nested Table 2</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td colspan="2">
-                  <table class="cols" role="presentation">
-                    <thead>
-                      <tr>
-                        <th>Column 1</th>
-                        <th>Column 2</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>abc</td>
-                        <td>def</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
+  <table class="main">
+    <tr>
+      <!-- Nested Table 2 -->
+      <td>
+        <table class="nested">
+          <tr>
+            <th colspan="2">Nested Table 2</th>
+          </tr>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+          </tr>
+          <tr>
+            <td>abc</td>
+            <td>def</td>
+          </tr>
+        </table>
+      </td>
 
-        <!-- TOP RIGHT cell: Nested Table 1 (with list) -->
-        <td>
-          <table class="nested" role="presentation">
-            <thead>
-              <tr><th>Nested Table 1</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="list-cell">
-                  <ul>
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
+      <!-- Nested Table 1 -->
+      <td>
+        <table class="nested">
+          <tr>
+            <th>Nested Table 1</th>
+          </tr>
+          <tr>
+            <td>
+              <ul>
+                <li>List item 1</li>
+                <li>List item 2</li>
+                <li>List item 3</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
 
-      <!-- Second row: left and right cells -->
-      <tr>
-        <!-- BOTTOM LEFT cell: Nested Table 3 -->
-        <td>
-          <table class="nested" role="presentation">
-            <thead>
-              <tr><th colspan="2">Nested Table 3</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="text-align:left; padding:10px;">
-                  <!-- A small inline nested row with link and demo text -->
-                  <a class="link-box" href="#">Nested Table</a>
-                  <span class="small-cell">Demo Continued</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
+    <tr>
+      <!-- Nested Table 3 -->
+      <td>
+        <table class="nested">
+          <tr>
+            <th colspan="2">Nested Table 3</th>
+          </tr>
+          <tr>
+            <td>
+              <span class="link-box">Nested Table</span>
+              <span class="demo-box">Demo Continued</span>
+            </td>
+          </tr>
+        </table>
+      </td>
 
-        <!-- BOTTOM RIGHT cell: Nested Table 4 with black HTML bar -->
-        <td>
-          <table class="nested" role="presentation">
-            <thead>
-              <tr><th>Nested Table 4</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="black-bar">HTML</div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
+      <!-- Nested Table 4 -->
+      <td>
+        <table class="nested">
+          <tr>
+            <th>Nested Table 4</th>
+          </tr>
+          <tr>
+            <td class="black-cell">HTML</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
   </table>
 </body>
 </html>
